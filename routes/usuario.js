@@ -94,7 +94,7 @@ app.put('/:id', mdAutenticacion.verificaToken, (req, res) => {
 //  Crear usuarios en base de datos 
 //  ===================================
 
-app.post('/', mdAutenticacion.verificaToken, (req, res) => {
+app.post('/', (req, res) => {
 
     var body = req.body;
 

@@ -197,7 +197,7 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
                     return res.status(200).json({
                         ok: true,
                         mensaje: 'Imagen de hospital Actualizada',
-                        medico: hospitalActualizado
+                        hospital: hospitalActualizado
                     });
 
                 });

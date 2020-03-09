@@ -105,7 +105,7 @@ function buscarMedicos(busqueda, regexp) {
 function buscarUsuario(busqueda, regexp) {
     return new Promise((resolve, reject) => {
 
-        Usuario.find({}, 'nombre email role')
+        Usuario.find({}, 'nombre email role img')
             .or([{ 'nombre': regexp }, { 'email': regexp }])
             .exec((err, usuarios) => {
 
