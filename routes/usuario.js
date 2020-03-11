@@ -7,6 +7,7 @@ var app = express();
 
 var Usuario = require('../models/usuario');
 
+
 //  ===================================
 //   Obtener todos los usuarios 
 //  ===================================
@@ -43,7 +44,7 @@ app.get('/', (req, res, next) => {
 //  ===================================
 //  Actualizar usuarios 
 //  ===================================
-app.put('/:id', mdAutenticacion.verificaToken, (req, res) => {
+app.put('/:id', [mdAutenticacion.verificaToken, mdAutenticacion.verificaADMIN_o_Mismousuario], (req, res) => {
 
     var id = req.params.id;
     var body = req.body;
@@ -127,7 +128,7 @@ app.post('/', (req, res) => {
 //  Eliminar usuario de base de datos
 //  ===================================
 
-app.delete('/:id', mdAutenticacion.verificaToken, (req, res) => {
+app.delete('/:id', [mdAutenticacion.verificaToken, mdAutenticacion.verificaADMIN_ROLE], (req, res) => {
 
     var id = req.params.id;
 
